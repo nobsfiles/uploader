@@ -59,8 +59,7 @@ table.fixed td { overflow: hidden; }
 						<br>
 						<font face="Candara" color="#000000" size="3"><i>Simple File Uploader</i></font>
 						<br>
-												<font face="Candara" color="#000000" size="3"><i><small>louiejohnc@gmail.com</i></font>
-						<br>
+						
 						<font face="Candara" color="#000000" size="3">&nbsp</font>
 					</td>
 				</tr>
@@ -97,6 +96,8 @@ table.fixed td { overflow: hidden; }
 									<input type="text" class="outtxt" name="linkr" id="linkr" align = "center" size="80" class="field left" readonly/>
 								</li>
 								<button onclick="copyDURL()">Copy text</button>
+										<font face="Candara" color="#000000" size="3"><i><small>louiejohnc@gmail.com</i></font>
+						<br>
 								<p>
 									</font>
 								</td>
@@ -113,7 +114,223 @@ table.fixed td { overflow: hidden; }
 		var config = {
     apiKey: "AIzaSyAWFzozrTzyqHZQTAolaokuQpz70ODyKUw",
     authDomain: "my-test-project-8241d.firebaseapp.com",
-    databaseURL: "https://my-test-project-8241d.firebaseio.com",
+    databaseURL: "https://my-test-project-8241d.firebaseio.com",<!DOCTYPE html>
+<html>
+
+<head>
+	<title>NoBS Files</title>
+</head>
+<style>
+h1 {
+	margin-left: 70px;
+}
+
+form li {
+	list-style: none;
+	margin-bottom: 5px;
+}
+
+form ul li label {
+	float: left;
+	clear: left;
+	width: 100px;
+	text-align: right;
+	margin-right: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.outtxt {
+	border: 0;
+}
+
+form ul li input,
+select,
+span {
+	float: left;
+	margin-bottom: 10px;
+}
+
+form textarea {
+	float: left;
+	width: 350px;
+	height: 150px;
+}
+
+input[type="text"] {
+	background: transparent;
+	border: none;
+	align: center;
+}
+
+p {
+	margin-left: 70px;
+	font-weight: bold;
+}
+
+table.fixed {
+	table-layout: fixed;
+	width: 540px;
+}
+
+table.fixed td {
+	overflow: hidden;
+}
+</style>
+
+<body bgcolor="deebf6">
+	<form name="registration" onSubmit="return formValidation();" style="text-align: justify; display: block; font-family: sans-serif;">
+		<table cellspacing="0" border="0" align="center" class="fixed">
+			<colgroup width="100%"></colgroup>
+			<tr>
+				<td style="border-top: 0px solid #000000; border-left: 0px solid #000000; border-right: 0px solid #000000" height="2" align="center" valign=middle bgcolor="#FFFFFF">
+					<font face="Candara" color="#ED0000" size="43"><b>NO BS</b></font>
+					<br>
+					<font face="Candara" color="#000000" size="3"><i>Simple File Uploader</i></font>
+					<br>
+					<font face="Candara" color="#000000" size="3">&nbsp</font>
+				</td>
+			</tr>
+			<tr>
+				<td style="border-left: 0px solid #000000; border-right: 0px solid #000000" height="20" align="center" valign=middle bgcolor="#FFFFFF">
+					<font color="#000000"></font>
+					<input type="file" value="upload" accept="all/*" id="fileButton" align="center">
+				</td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 0px solid #000000; border-left: 0px solid #000000; border-right: 0px solid #000000" height="21" align="center" valign=middle bgcolor="#FFFFFF">
+					<font color="#000000" <li>
+						<input type="text" class="outtxt" name="ol_name" id="ol_name" align="center" size="21" class="field left" readonly />
+						</li>
+						<li>
+							<input type="text" class="outtxt" name="ol_totalSize" id="ol_totalSize" align="center" size="15" class="field left" readonly />
+						</li>
+						<progress value="0" max="100" id="uploader">0%</progress>
+						<br>
+						<input type="reset" value="Reset" onClick="location.reload();" />
+						<p>
+					</font>
+				</td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 0px solid #000000; border-left: 0px solid #000000; border-right: 0px solid #000000" height="21" align="center" valign=middle bgcolor="#9DC3E6">
+					<p>
+						<li>
+							<input type="text" class="outtxt" name="Hlinkr" id="Hlinkr" align="center" style="font-weight: bold;" size="0" class="field center" readonly />
+						</li>
+						<li>
+							<input type="text" class="outtxt" name="linkr" id="linkr" align="center" size="80" class="field left" readonly />
+						</li>
+						<button onclick="copyDURL()">Copy text</button>
+						<br>
+						<font face="Candara" color="#000000" size="3"><i><small>louiejohnc@gmail.com</i></font>
+						<br>
+						<p>
+							</font>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<script>
+	//BE SURE TO PROTECT EVERYTHING IN THE CONFIG
+	//DON'T COMMIT IT!!!
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyAWFzozrTzyqHZQTAolaokuQpz70ODyKUw",
+		authDomain: "my-test-project-8241d.firebaseapp.com",
+		databaseURL: "https://my-test-project-8241d.firebaseio.com",
+		projectId: "my-test-project-8241d",
+		storageBucket: "my-test-project-8241d.appspot.com",
+		messagingSenderId: "954528219427",
+		appId: "1:954528219427:web:5495b0942511e4efb98c96"
+	};
+	firebase.initializeApp(config);
+	</script>
+	<script type="text/javascript">
+	// firebase bucket name
+	// REPLACE WITH THE ONE YOU CREATE
+	// ALSO CHECK STORAGE RULES IN FIREBASE CONSOLE
+	var fbBucketName = 'images';
+	// get elements
+	var uploader = document.getElementById('uploader');
+	var name = document.getElementById('ol_name');
+	var fileButton = document.getElementById('fileButton');
+	var totalsize = 0;
+	var login = "o_7256h5g276";
+	var api_key = "15a5a57d93bed61e19ee1b20ec773557b41b428f";
+	var long_url = "http://www.kozlenko.info";
+	// listen for file selection
+	fileButton.addEventListener('change', function(e) {
+		// what happened
+		console.log('file upload event', e);
+		// get file
+		var file = e.target.files[0];
+		// create a storage ref
+		var storageRef = firebase.storage().ref(`${fbBucketName}/${file.name}`);
+		// upload file
+		var uploadTask = storageRef.put(file);
+		// The part below is largely copy-pasted from the 'Full Example' section from
+		// https://firebase.google.com/docs/storage/web/upload-files
+		// update progress bar
+		uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+			function(snapshot) {
+				// Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+				var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+				totalsize = snapshot.totalBytes;
+				uploader.value = progress
+				ol_name.value = "Upload Progress: " + progress.toFixed(2) + "%";
+				ol_totalSize.value = "(" + (snapshot.bytesTransferred / 1024).toFixed(1) + "/" + (snapshot.totalBytes / 1024).toFixed(1) + "kB)";
+				console.log('Upload is ' + progress + '% done');
+				switch (snapshot.state) {
+					case firebase.storage.TaskState.PAUSED: // or 'paused'
+						console.log('Upload is paused');
+						break;
+					case firebase.storage.TaskState.RUNNING: // or 'running'
+						console.log('Upload is running');
+						break;
+				}
+			},
+			function(error) {
+				// A full list of error codes is available at
+				// https://firebase.google.com/docs/storage/web/handle-errors
+				switch (error.code) {
+					case 'storage/unauthorized':
+						// User doesn't have permission to access the object
+						break;
+					case 'storage/canceled':
+						// User canceled the upload
+						break;
+					case 'storage/unknown':
+						// Unknown error occurred, inspect error.serverResponse
+						break;
+				}
+			},
+			function() {
+				// Upload completed successfully, now we can get the download URL
+				// save this link somewhere, e.g. put it in an input field
+				var downloadURL = uploadTask.snapshot.downloadURL;
+				console.log('downloadURL', downloadURL);
+				Hlinkr.value = "Download Link: " + (totalsize / 1024).toFixed(2) + "kB";
+				linkr.value = downloadURL;
+			});
+	});
+
+	function copyDURL() {
+		/* Get the text field */
+		var copyText = document.getElementById("linkr");
+		/* Select the text field */
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		/* Copy the text inside the text field */
+		document.execCommand("copy");
+		/* Alert the copied text 
+		alert("Copied the text: " + copyText.value);*/
+	}
+	</script>
+</body>
+
+</html>
     projectId: "my-test-project-8241d",
     storageBucket: "my-test-project-8241d.appspot.com",
     messagingSenderId: "954528219427",
